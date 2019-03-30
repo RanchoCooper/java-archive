@@ -1,3 +1,6 @@
 [submodule "design-pattern"]
 	path = design-pattern
 	url = git@github.com:RanchoCooper/design-pattern.git
+[submodule "spring-in-action"]
+	path = spring-in-action
+	url = git@github.com:RanchoCooper/spring-in-action.git
