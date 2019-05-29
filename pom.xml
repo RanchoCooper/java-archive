@@ -12,6 +12,24 @@
         <module>demos</module>
         <module>design-pattern</module>
         <module>spring-in-action</module>
+        <module>hacker-rank</module>
+        <module>effective-java</module>
+        <module>spring-cloud-in-action</module>
+        <module>leet-code</module>
     </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>1.10</source>
+                    <target>1.10</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
