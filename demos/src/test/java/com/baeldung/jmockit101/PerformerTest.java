@@ -1,0 +1,38 @@
+package com.baeldung.jmockit101;
+
+import mockit.*;
+import mockit.integration.junit4.JMockit;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import static org.junit.Assert.*;
+
+/**
+ * @author rancho
+ * @date 2019-05-29
+ */
+@RunWith(JMockit.class)
+public class PerformerTest {
+
+    @Injectable
+    private Collaborator collaborator;
+
+    @Tested
+    private Performer performer;
+
+    @Test
+    public void testThePerformMethod(@Mocked Model model) {
+        new Expectations() {{
+                model.getInfo();
+                result = "bar";
+                collaborator.collaborate("bar");
+                result = true;
+        }};
+
+        performer.perform(model);
+
+        new Verifications() {{
+            collaborator.receive(true);
+        }};
+    }
+}
